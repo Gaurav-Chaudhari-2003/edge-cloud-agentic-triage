@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a98058be-b01f-447b-8eee-de5ce997225f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/app/api/status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/db/create_db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/services/status_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/workers/celery_app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/edge-cloud-agentic-triage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/edge-cloud-agentic-triage.iml" afterDir="false" />
+    <list default="true" id="a98058be-b01f-447b-8eee-de5ce997225f" name="Changes" comment="Base environment has been initialized by installing and setup of postgres, celery.&#10;Created connection: backend with postgres.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,61 +24,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000001533013416" />
-      <entry key="MS500" value="1.067110273376434" />
-      <entry key="S2" value="2.836073900093075" />
-      <entry key="S5" value="5.32207749133374" />
-      <entry key="S10" value="6.8545623613679405" />
-      <entry key="S30" value="8.202427664948463" />
-      <entry key="S60" value="8.58985593461773" />
-      <entry key="M2" value="8.793813449466343" />
-      <entry key="M5" value="9.443561373443629" />
-      <entry key="M10" value="13.924587330766174" />
-      <entry key="M15" value="21.34108108020412" />
-      <entry key="M30" value="46.03733632150223" />
-      <entry key="H1" value="80.37884686539809" />
-      <entry key="H2" value="111.53596504353156" />
-      <entry key="H4" value="133.03679693220786" />
-      <entry key="D1" value="155.0651863269542" />
-      <entry key="W1" value="159.28331285355563" />
+      <entry key="MS100" value="1.7590657916406596" />
+      <entry key="MS500" value="3.5650505655236024" />
+      <entry key="S2" value="5.535926164987145" />
+      <entry key="S5" value="6.344560441771895" />
+      <entry key="S10" value="7.036606002130666" />
+      <entry key="S30" value="12.69412813591688" />
+      <entry key="S60" value="21.760062076776645" />
+      <entry key="M2" value="32.78049089684599" />
+      <entry key="M5" value="44.51144825135683" />
+      <entry key="M10" value="53.31414657327984" />
+      <entry key="M15" value="61.979546717260746" />
+      <entry key="M30" value="87.83870590863685" />
+      <entry key="H1" value="123.22873252468366" />
+      <entry key="H2" value="155.48265266456804" />
+      <entry key="H4" value="177.84467701696872" />
+      <entry key="D1" value="200.8381894397675" />
+      <entry key="W1" value="205.25010943914597" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
-      <entry key="S10" value="4.898279736270108E-202" />
-      <entry key="S30" value="7.882812463032588E-68" />
-      <entry key="S60" value="2.8076346740686506E-34" />
-      <entry key="M2" value="1.6755997953176727E-17" />
-      <entry key="M5" value="1.948355130468178E-7" />
-      <entry key="M10" value="4.414017592248786E-4" />
-      <entry key="M15" value="0.005797259040265989" />
-      <entry key="M30" value="0.076139733649823" />
-      <entry key="H1" value="0.27593429226869054" />
-      <entry key="H2" value="0.5252944814755718" />
-      <entry key="H4" value="0.7247720203454123" />
-      <entry key="D1" value="0.9477640614350114" />
-      <entry key="W1" value="0.9923650542566738" />
+      <entry key="S10" value="9.270940112771735E-207" />
+      <entry key="S30" value="2.1007510626265484E-69" />
+      <entry key="S60" value="4.5833950982067235E-35" />
+      <entry key="M2" value="6.770077620091723E-18" />
+      <entry key="M5" value="1.35593059186136E-7" />
+      <entry key="M10" value="3.682296283382637E-4" />
+      <entry key="M15" value="0.005137428844039232" />
+      <entry key="M30" value="0.0716758595626117" />
+      <entry key="H1" value="0.2677234759273307" />
+      <entry key="H2" value="0.5174200188699025" />
+      <entry key="H4" value="0.7193191356205529" />
+      <entry key="D1" value="0.9465718879296978" />
+      <entry key="W1" value="0.9921866328761157" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.1561720661529397E-4" />
-      <entry key="MS500" value="0.22878504850311365" />
-      <entry key="S2" value="2.465356501487666" />
-      <entry key="S5" value="5.1509357269775995" />
-      <entry key="S10" value="6.7643981537260105" />
-      <entry key="S30" value="8.171253071447477" />
-      <entry key="S60" value="8.57412152165704" />
-      <entry key="M2" value="8.785907563512351" />
-      <entry key="M5" value="9.440297008604775" />
-      <entry key="M10" value="13.923096363462205" />
-      <entry key="M15" value="21.34527374296133" />
-      <entry key="M30" value="46.112120010270075" />
-      <entry key="H1" value="80.65368810353877" />
-      <entry key="H2" value="112.06051474592425" />
-      <entry key="H4" value="133.76112616064952" />
-      <entry key="D1" value="156.0128643422348" />
-      <entry key="W1" value="160.2756652771794" />
+      <entry key="MS100" value="1.6832692358512724" />
+      <entry key="MS500" value="3.4911441559662477" />
+      <entry key="S2" value="5.506321403538484" />
+      <entry key="S5" value="6.331198120429332" />
+      <entry key="S10" value="7.029144025109615" />
+      <entry key="S30" value="12.685096209604339" />
+      <entry key="S60" value="21.748031670752795" />
+      <entry key="M2" value="32.76951013217873" />
+      <entry key="M5" value="44.504886357702496" />
+      <entry key="M10" value="53.31050841457495" />
+      <entry key="M15" value="61.981605794898435" />
+      <entry key="M30" value="87.90824567843035" />
+      <entry key="H1" value="123.49495761197309" />
+      <entry key="H2" value="155.9991180855179" />
+      <entry key="H4" value="178.56344568289538" />
+      <entry key="D1" value="201.7846568160402" />
+      <entry key="W1" value="206.24228078849583" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -97,31 +90,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.create_db.executor&quot;: &quot;Run&quot;,
-    &quot;Python.models.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;/home/stark/.local/share/JetBrains/PyCharm2026.1/Shell Script/shellcheck&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/stark/Projects/edge-cloud-agentic-triage/backend/app&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.create_db.executor": "Run",
+    "Python.models.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "/home/stark/.local/share/JetBrains/PyCharm2026.1/Shell Script/shellcheck",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/stark/Projects/edge-cloud-agentic-triage/backend/app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend/app" />
@@ -201,12 +194,25 @@
       <updated>1782377785660</updated>
       <workItem from="1782377786682" duration="5293000" />
       <workItem from="1782383192957" duration="1841000" />
-      <workItem from="1782385159592" duration="1001000" />
+      <workItem from="1782385159592" duration="2205000" />
     </task>
+    <task id="LOCAL-00001" summary="Base environment has been initialized by installing and setup of postgres, celery.&#10;Created connection: backend with postgres.">
+      <option name="closed" value="true" />
+      <created>1782388606185</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1782388606185</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Base environment has been initialized by installing and setup of postgres, celery.&#10;Created connection: backend with postgres." />
+    <option name="LAST_COMMIT_MESSAGE" value="Base environment has been initialized by installing and setup of postgres, celery.&#10;Created connection: backend with postgres." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
