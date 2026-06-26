@@ -24,6 +24,7 @@ class AgentState:
     urgency: str = "low"
     validation_errors: List[str] = field(default_factory=list)
     model_used: str = ""
-
-    # execution_path will now store structured trace data
     execution_path: List[Dict[str, Any]] = field(default_factory=list)
+    
+    # New field for human review flag
+    requires_human_review: bool = False

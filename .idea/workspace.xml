@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a98058be-b01f-447b-8eee-de5ce997225f" name="Changes" comment="commit for push">
-      <change afterPath="$PROJECT_DIR$/backend/app/agents/ocr_agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/agents/audit_logger_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/agents/audit_logger_agent.py" afterDir="false" />
+    <list default="true" id="a98058be-b01f-447b-8eee-de5ce997225f" name="Changes" comment="feat: add OCR agent for image handling and enhance triage pipeline with file support">
+      <change afterPath="$PROJECT_DIR$/backend/app/agents/urgency_assignment_agent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/agents/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/agents/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/api/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/api/trace.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/trace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/api/triage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/triage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/services/metrics_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/services/metrics_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/agents/medical_complexity_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/agents/medical_complexity_agent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/services/orchestrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/services/orchestrator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,61 +47,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.3072847890974657" />
-      <entry key="MS500" value="3.124570786370502" />
-      <entry key="S2" value="4.979293327049227" />
-      <entry key="S5" value="5.969661069020298" />
-      <entry key="S10" value="6.435608337368234" />
-      <entry key="S30" value="6.877937650295476" />
-      <entry key="S60" value="8.04971956399275" />
-      <entry key="M2" value="11.546542345515677" />
-      <entry key="M5" value="17.891357321933185" />
-      <entry key="M10" value="22.532404897437903" />
-      <entry key="M15" value="25.550966945860054" />
-      <entry key="M30" value="33.6559473457965" />
-      <entry key="H1" value="57.917817282606336" />
-      <entry key="H2" value="111.70851133462223" />
-      <entry key="H4" value="177.32861251387916" />
-      <entry key="D1" value="277.26531008697066" />
-      <entry key="W1" value="300.8404050836212" />
+      <entry key="MS100" value="1.4022250610906941" />
+      <entry key="MS500" value="3.271897841384981" />
+      <entry key="S2" value="5.347586879545039" />
+      <entry key="S5" value="6.2277288148462215" />
+      <entry key="S10" value="6.591739178726549" />
+      <entry key="S30" value="6.858605413544102" />
+      <entry key="S60" value="6.928628279791655" />
+      <entry key="M2" value="6.9799765981651545" />
+      <entry key="M5" value="8.266800577319263" />
+      <entry key="M10" value="13.022455853905505" />
+      <entry key="M15" value="17.605572470211037" />
+      <entry key="M30" value="28.685798365861846" />
+      <entry key="H1" value="53.492383908448176" />
+      <entry key="H2" value="107.086172850484" />
+      <entry key="H4" value="174.8507365569496" />
+      <entry key="D1" value="281.73858641274995" />
+      <entry key="W1" value="307.44721544892343" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
-      <entry key="S10" value="1.89339214238953E-266" />
-      <entry key="S30" value="2.6653046489875017E-89" />
-      <entry key="S60" value="5.1626664131244394E-45" />
-      <entry key="M2" value="7.193856181204895E-23" />
-      <entry key="M5" value="1.4831378208761637E-9" />
-      <entry key="M10" value="4.698776378112826E-5" />
-      <entry key="M15" value="0.0015718197614603972" />
-      <entry key="M30" value="0.055529881181006595" />
-      <entry key="H1" value="0.35686906120200773" />
-      <entry key="H2" value="0.9771012677755144" />
-      <entry key="H4" value="1.681192991356231" />
-      <entry key="D1" value="2.7162179270122855" />
-      <entry key="W1" value="2.9574950269549913" />
+      <entry key="S10" value="8.440079341230149E-301" />
+      <entry key="S30" value="9.450370669851577E-101" />
+      <entry key="S60" value="9.721315923007318E-51" />
+      <entry key="M2" value="9.87159314582752E-26" />
+      <entry key="M5" value="1.0620664951433116E-10" />
+      <entry key="M10" value="1.2573896352097872E-5" />
+      <entry key="M15" value="6.527188337056659E-4" />
+      <entry key="M30" value="0.03578396364759009" />
+      <entry key="H1" value="0.2864769922126118" />
+      <entry key="H2" value="0.8754472880747971" />
+      <entry key="H4" value="1.5913392815855594" />
+      <entry key="D1" value="2.6914654754210035" />
+      <entry key="W1" value="2.953629737522258" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.211667683607179" />
-      <entry key="MS500" value="2.716775267689742" />
-      <entry key="S2" value="4.651928854795144" />
-      <entry key="S5" value="5.800045112213282" />
-      <entry key="S10" value="6.342980413387319" />
-      <entry key="S30" value="6.845154832213082" />
-      <entry key="S60" value="8.032954979943945" />
-      <entry key="M2" value="11.537892177813594" />
-      <entry key="M5" value="17.887732158001274" />
-      <entry key="M10" value="22.53058496106094" />
-      <entry key="M15" value="25.55126872257785" />
-      <entry key="M30" value="33.71075464923881" />
-      <entry key="H1" value="58.27405581278683" />
-      <entry key="H2" value="112.68495798329205" />
-      <entry key="H4" value="179.00926591496076" />
-      <entry key="D1" value="279.9813836406201" />
-      <entry key="W1" value="303.7978776428377" />
+      <entry key="MS100" value="1.3591252137908967" />
+      <entry key="MS500" value="3.246626262294164" />
+      <entry key="S2" value="5.337313166183404" />
+      <entry key="S5" value="6.222996259979444" />
+      <entry key="S10" value="6.589246195759309" />
+      <entry key="S30" value="6.857743661133409" />
+      <entry key="S60" value="6.928193350522914" />
+      <entry key="M2" value="6.9797462601351485" />
+      <entry key="M5" value="8.266453347785799" />
+      <entry key="M10" value="13.021924982035085" />
+      <entry key="M15" value="17.605668539106876" />
+      <entry key="M30" value="28.7211020652853" />
+      <entry key="H1" value="53.77834742585335" />
+      <entry key="H2" value="107.96102996559895" />
+      <entry key="H4" value="176.44156325835058" />
+      <entry key="D1" value="284.4299085256047" />
+      <entry key="W1" value="310.4008227045206" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -243,7 +238,7 @@
       <workItem from="1782385159592" duration="3047000" />
       <workItem from="1782390207023" duration="7071000" />
       <workItem from="1782455161029" duration="5264000" />
-      <workItem from="1782463157442" duration="899000" />
+      <workItem from="1782463157442" duration="1415000" />
     </task>
     <task id="LOCAL-00001" summary="Base environment has been initialized by installing and setup of postgres, celery.&#10;Created connection: backend with postgres.">
       <option name="closed" value="true" />
@@ -277,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782458429768</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: add OCR agent for image handling and enhance triage pipeline with file support">
+      <option name="closed" value="true" />
+      <created>1782464340666</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1782464340666</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +302,8 @@
     <MESSAGE value="temp" />
     <MESSAGE value="Implemented The required problem statement." />
     <MESSAGE value="commit for push" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit for push" />
+    <MESSAGE value="feat: add OCR agent for image handling and enhance triage pipeline with file support" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add OCR agent for image handling and enhance triage pipeline with file support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
