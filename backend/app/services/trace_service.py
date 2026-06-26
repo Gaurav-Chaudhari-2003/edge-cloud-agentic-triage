@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from app.db.models import AuditLog
 
-def get_result_from_audit(db: Session, request_id: int):
+def get_trace_for_request(db: Session, request_id: int):
     """
-    Retrieves the final result for a completed request from the audit log.
+    Retrieves the audit log for a specific request ID from the database.
     """
     return db.query(AuditLog).filter(AuditLog.request_id == request_id).first()

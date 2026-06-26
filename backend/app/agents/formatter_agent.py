@@ -1,77 +1,37 @@
+from app.agents.base import AgentState
+
 class FormatterAgent:
+    """
+    Formats the final output, creating a rich JSON response that provides
+    a full, observable trace of the agent pipeline's execution.
+    """
 
-    def run(
-        self,
-        state
-    ):
+    def run(self, state: AgentState) -> AgentState:
+        state.current_agent = "formatter"
+        state.execution_path.append("formatter")
 
-        state.current_agent=(
-            "formatter"
-        )
+        # Handle the case where validation failed
+        if state.validation_errors:
+            return {
+                "request_id": state.request_id,
+                "status": "failed",
+                "errors": state.validation_errors,
+                "execution_path": state.execution_path,
+                "latency_ms": state.latency_ms,
+            }
 
-        if (
-            state.route
-            ==
-            "light"
-        ):
-            estimated_cost=(
-                round(
-                    state.latency_ms
-                    /
-                    1000,
-                    2
-                )
-            )
-        else:
-            estimated_cost=(
-                round(
-                    (
-                        state.latency_ms
-                        /
-                        1000
-                    )
-                    *
-                    2,
-                    2
-                )
-            )
-
+        # Format the successful response
         return {
-
-            "request_id":
-            state.request_id,
-
-            "route":
-            state.route,
-
-            "complexity":
-            state.complexity,
-
-            "confidence":
-            state.confidence,
-
-            "agent":
-            state.current_agent,
-
-            "result":
-            state.output,
-
-            "latency_ms":
-            state.latency_ms,
-
-            "used_model":
-            (
-                "TinyLlama"
-                if state.route == "light"
-                else "Qwen"
-            ),
-            "execution_path":[
-                "input",
-                "complexity",
-                "privacy",
-                "router",
-                state.route,
-                "formatter"
-            ],
-            "estimated_compute_cost": estimated_cost
+            "request_id": state.request_id,
+            "status": "completed",
+            "contains_pii": state.contains_pii,
+            "detected_entities": state.detected_entities,
+            "intent": state.intent,
+            "complexity": round(state.complexity, 2),
+            "urgency": state.urgency, # This will be implemented in a future step
+            "route": state.route,
+            "model_used": state.model_used,
+            "latency_ms": round(state.latency_ms),
+            "execution_path": state.execution_path,
+            "result": state.output,
         }

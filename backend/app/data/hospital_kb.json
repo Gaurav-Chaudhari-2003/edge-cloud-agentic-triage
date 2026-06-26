@@ -1,0 +1,26 @@
+{
+  "visiting_hours": {
+    "keywords": ["visiting hours", "when can i visit", "visiting time"],
+    "answer": "Our general visiting hours are from 9:00 AM to 8:00 PM daily. Please check with the specific department for any restricted hours."
+  },
+  "appointment_booking": {
+    "keywords": ["book appointment", "schedule appointment", "make appointment", "see a doctor"],
+    "answer": "You can book an appointment by calling our scheduling department at (555) 123-4567 or through our online patient portal."
+  },
+  "departments": {
+    "keywords": ["departments", "which department", "find department"],
+    "answer": "We have various departments including Cardiology, Oncology, Pediatrics, Emergency, and more. Please visit our website or call our main line for a full list."
+  },
+  "billing": {
+    "keywords": ["billing", "pay bill", "invoice", "cost"],
+    "answer": "For billing inquiries, please contact our billing department at (555) 987-6543. You can also pay your bill online."
+  },
+  "insurance": {
+    "keywords": ["insurance", "coverage", "policy", "accepts insurance"],
+    "answer": "We accept most major insurance plans. Please contact our insurance verification team at (555) 234-5678 to confirm your coverage."
+  },
+  "emergency_contact": {
+    "keywords": ["emergency", "urgent", "contact emergency"],
+    "answer": "For medical emergencies, please call 911 immediately or proceed to our Emergency Department. For non-emergencies, call our main line at (555) 123-4567."
+  }
+}
