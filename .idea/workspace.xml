@@ -4,36 +4,25 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a98058be-b01f-447b-8eee-de5ce997225f" name="Changes" comment="Optimized the route path with comparing token+privacy+more...">
-      <change afterPath="$PROJECT_DIR$/backend/app/agents/audit_logger_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/agents/intent_classification_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/agents/local_knowledge_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/agents/medical_complexity_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/agents/medical_reasoning_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/agents/pii_detection_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/agents/pii_sanitization_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/agents/validation_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/api/trace.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/data/faq.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/data/hospital_kb.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/services/trace_service.py" afterDir="false" />
+    <list default="true" id="a98058be-b01f-447b-8eee-de5ce997225f" name="Changes" comment="commit for push">
+      <change afterPath="$PROJECT_DIR$/backend/app/agents/ocr_agent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/agents/audit_logger_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/agents/audit_logger_agent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/agents/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/agents/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/agents/formatter_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/agents/formatter_agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/agents/router_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/agents/router_agent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/api/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/api/result.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/api/status.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/status.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/db/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/api/trace.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/trace.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/api/triage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/triage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/services/metrics_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/services/metrics_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/services/orchestrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/services/orchestrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/services/result_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/services/result_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/workers/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/workers/tasks.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="9284" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,63 +46,67 @@
     &quot;accountId&quot;: &quot;9c330ef5-6388-44de-ac24-dc77cebd5d1d&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.2795117922539236" />
-      <entry key="MS500" value="2.422109666343658" />
-      <entry key="S2" value="4.430895752231563" />
-      <entry key="S5" value="5.2809694839770325" />
-      <entry key="S10" value="5.623099992276542" />
-      <entry key="S30" value="5.870278550295202" />
-      <entry key="S60" value="5.934623623497482" />
-      <entry key="M2" value="5.9742833759413285" />
-      <entry key="M5" value="6.36451436894149" />
-      <entry key="M10" value="7.797752490641345" />
-      <entry key="M15" value="9.599027948575264" />
-      <entry key="M30" value="16.528871572096683" />
-      <entry key="H1" value="40.73433518434101" />
-      <entry key="H2" value="94.65275253949332" />
-      <entry key="H4" value="159.73294219719395" />
-      <entry key="D1" value="257.9015451896145" />
-      <entry key="W1" value="280.9392123143047" />
+      <entry key="MS100" value="1.3072847890974657" />
+      <entry key="MS500" value="3.124570786370502" />
+      <entry key="S2" value="4.979293327049227" />
+      <entry key="S5" value="5.969661069020298" />
+      <entry key="S10" value="6.435608337368234" />
+      <entry key="S30" value="6.877937650295476" />
+      <entry key="S60" value="8.04971956399275" />
+      <entry key="M2" value="11.546542345515677" />
+      <entry key="M5" value="17.891357321933185" />
+      <entry key="M10" value="22.532404897437903" />
+      <entry key="M15" value="25.550966945860054" />
+      <entry key="M30" value="33.6559473457965" />
+      <entry key="H1" value="57.917817282606336" />
+      <entry key="H2" value="111.70851133462223" />
+      <entry key="H4" value="177.32861251387916" />
+      <entry key="D1" value="277.26531008697066" />
+      <entry key="W1" value="300.8404050836212" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
-      <entry key="S10" value="1.5847116838711597E-257" />
-      <entry key="S30" value="2.5117905372779796E-86" />
-      <entry key="S60" value="1.5848652587312858E-43" />
-      <entry key="M2" value="3.9858494601481134E-22" />
-      <entry key="M5" value="2.9417459628829795E-9" />
-      <entry key="M10" value="6.617540454802175E-5" />
-      <entry key="M15" value="0.0019748947865865264" />
-      <entry key="M30" value="0.062243979869709434" />
-      <entry key="H1" value="0.3778280554120277" />
-      <entry key="H2" value="1.0053846011447658" />
-      <entry key="H4" value="1.7053514586254779" />
-      <entry key="D1" value="2.7226845833754143" />
-      <entry key="W1" value="2.9584998705302237" />
+      <entry key="S10" value="1.89339214238953E-266" />
+      <entry key="S30" value="2.6653046489875017E-89" />
+      <entry key="S60" value="5.1626664131244394E-45" />
+      <entry key="M2" value="7.193856181204895E-23" />
+      <entry key="M5" value="1.4831378208761637E-9" />
+      <entry key="M10" value="4.698776378112826E-5" />
+      <entry key="M15" value="0.0015718197614603972" />
+      <entry key="M30" value="0.055529881181006595" />
+      <entry key="H1" value="0.35686906120200773" />
+      <entry key="H2" value="0.9771012677755144" />
+      <entry key="H4" value="1.681192991356231" />
+      <entry key="D1" value="2.7162179270122855" />
+      <entry key="W1" value="2.9574950269549913" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2524614940375245" />
-      <entry key="MS500" value="2.3872431912860526" />
-      <entry key="S2" value="4.409973369569984" />
-      <entry key="S5" value="5.270853220065935" />
-      <entry key="S10" value="5.6177067799403755" />
-      <entry key="S30" value="5.868401791836665" />
-      <entry key="S60" value="5.93367506776783" />
-      <entry key="M2" value="5.973806350727395" />
-      <entry key="M5" value="6.364318893513117" />
-      <entry key="M10" value="7.7977091554399705" />
-      <entry key="M15" value="9.600914175966178" />
-      <entry key="M30" value="16.59098191584877" />
-      <entry key="H1" value="41.11181608979476" />
-      <entry key="H2" value="95.6576195264234" />
-      <entry key="H4" value="161.43782324750822" />
-      <entry key="D1" value="260.6240977357987" />
-      <entry key="W1" value="283.89769151740336" />
+      <entry key="MS100" value="1.211667683607179" />
+      <entry key="MS500" value="2.716775267689742" />
+      <entry key="S2" value="4.651928854795144" />
+      <entry key="S5" value="5.800045112213282" />
+      <entry key="S10" value="6.342980413387319" />
+      <entry key="S30" value="6.845154832213082" />
+      <entry key="S60" value="8.032954979943945" />
+      <entry key="M2" value="11.537892177813594" />
+      <entry key="M5" value="17.887732158001274" />
+      <entry key="M10" value="22.53058496106094" />
+      <entry key="M15" value="25.55126872257785" />
+      <entry key="M30" value="33.71075464923881" />
+      <entry key="H1" value="58.27405581278683" />
+      <entry key="H2" value="112.68495798329205" />
+      <entry key="H4" value="179.00926591496076" />
+      <entry key="D1" value="279.9813836406201" />
+      <entry key="W1" value="303.7978776428377" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -125,32 +118,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.create_db.executor&quot;: &quot;Run&quot;,
-    &quot;Python.models.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;/home/stark/.local/share/JetBrains/PyCharm2026.1/Shell Script/shellcheck&quot;,
-    &quot;Shell Script.recreate_db.sh.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/stark/Projects/edge-cloud-agentic-triage/backend/app&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.create_db.executor": "Run",
+    "Python.models.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "/home/stark/.local/share/JetBrains/PyCharm2026.1/Shell Script/shellcheck",
+    "Shell Script.recreate_db.sh.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/stark/Projects/edge-cloud-agentic-triage/backend/app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend/app" />
@@ -248,7 +242,8 @@
       <workItem from="1782383192957" duration="1841000" />
       <workItem from="1782385159592" duration="3047000" />
       <workItem from="1782390207023" duration="7071000" />
-      <workItem from="1782455161029" duration="3210000" />
+      <workItem from="1782455161029" duration="5264000" />
+      <workItem from="1782463157442" duration="899000" />
     </task>
     <task id="LOCAL-00001" summary="Base environment has been initialized by installing and setup of postgres, celery.&#10;Created connection: backend with postgres.">
       <option name="closed" value="true" />
@@ -274,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782395227712</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit for push">
+      <option name="closed" value="true" />
+      <created>1782458429768</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1782458429768</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +298,8 @@
     <MESSAGE value="Base environment has been initialized by installing and setup of postgres, celery.&#10;Created connection: backend with postgres." />
     <MESSAGE value="temp" />
     <MESSAGE value="Implemented The required problem statement." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented The required problem statement." />
+    <MESSAGE value="commit for push" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit for push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

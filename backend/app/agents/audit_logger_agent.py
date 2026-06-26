@@ -1,6 +1,7 @@
 from app.agents.base import AgentState
 from app.db.models import AuditLog
 from app.core.database import SessionLocal
+from app.agents.formatter_agent import FormatterAgent
 
 class AuditLoggerAgent:
     """
@@ -8,9 +9,12 @@ class AuditLoggerAgent:
     This is the final agent in the pipeline.
     """
 
-    def run(self, state: AgentState, final_output: dict):
+    def run(self, state: AgentState):
         state.current_agent = "audit_logger"
-        state.execution_path.append("audit_logger")
+        
+        # We need the final output for the log, so we can call the formatter here
+        # This is safe because the formatter is a pure function of the state
+        final_output = FormatterAgent().run(state)
 
         db = SessionLocal()
         try:

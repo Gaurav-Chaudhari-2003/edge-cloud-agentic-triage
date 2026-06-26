@@ -1,17 +1,14 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
+from app.core.database import get_db
+from app.services.metrics_service import get_dashboard_metrics
 
 router = APIRouter()
 
-# The counter now uses the new, more descriptive route names
-counter = {
-    "local_knowledge": 0,
-    "medical_reasoning": 0,
-    "validation_failed": 0, # Also good to track how many requests fail validation
-}
-
 @router.get("/metrics", tags=["Metrics"])
-def get_metrics():
+def get_metrics_dashboard(db: Session = Depends(get_db)):
     """
-    Returns a simple in-memory counter for the number of requests per route.
+    Returns a comprehensive dashboard of metrics, providing measurable
+    evidence of the system's performance and routing strategy.
     """
-    return counter
+    return get_dashboard_metrics(db)

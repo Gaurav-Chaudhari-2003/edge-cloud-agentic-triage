@@ -1,22 +1,22 @@
 from dataclasses import dataclass, field
-from typing import List
+from typing import List, Dict, Any
 
 @dataclass
 class AgentState:
-    # Existing fields (preserved for backward compatibility)
+    # Existing fields
     request_id: int
     content: str
     input_type: str
     route: str = None
     complexity: float = 0
     confidence: float = 0
-    output: str = None
+    output: Any = None # Can be string or dict
     current_agent: str = None
     latency_ms: int = 0
-    estimated_cost: int = 0 # This will be replaced by a better metric later
+    estimated_cost: int = 0
     escalated: bool = False
 
-    # New fields for healthcare privacy workflow
+    # Fields for healthcare privacy workflow
     sanitized_content: str = ""
     contains_pii: bool = False
     detected_entities: List[str] = field(default_factory=list)
@@ -24,4 +24,6 @@ class AgentState:
     urgency: str = "low"
     validation_errors: List[str] = field(default_factory=list)
     model_used: str = ""
-    execution_path: List[str] = field(default_factory=list)
+
+    # execution_path will now store structured trace data
+    execution_path: List[Dict[str, Any]] = field(default_factory=list)

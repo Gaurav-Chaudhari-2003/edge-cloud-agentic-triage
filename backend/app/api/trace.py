@@ -8,8 +8,8 @@ router = APIRouter()
 @router.get("/trace/{request_id}", tags=["Observability"])
 def get_trace(request_id: int, db: Session = Depends(get_db)):
     """
-    Returns the complete execution trace for a given request ID.
-    This provides a detailed, step-by-step view of the agent pipeline.
+    Returns the complete execution trace for a given request ID, including
+    the status and duration of each agent in the pipeline.
     """
     trace_log = get_trace_for_request(db, request_id)
 
@@ -18,7 +18,7 @@ def get_trace(request_id: int, db: Session = Depends(get_db)):
 
     return {
         "request_id": trace_log.request_id,
-        "pipeline": trace_log.execution_path,
+        "agents": trace_log.execution_path, # The execution_path now contains the detailed trace
         "route": trace_log.route,
         "model_used": trace_log.model_used,
         "latency_ms": trace_log.latency_ms,

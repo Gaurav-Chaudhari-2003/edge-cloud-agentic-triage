@@ -37,7 +37,7 @@ class MedicalComplexityAgent:
 
         # Cap the complexity at 1.0
         normalized_complexity = min(total_complexity, 1.0)
-        
+
         print(f"\nFINAL CALCULATED COMPLEXITY: {normalized_complexity}")
         print("=" * 60)
 
