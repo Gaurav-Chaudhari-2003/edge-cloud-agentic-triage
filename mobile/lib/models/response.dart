@@ -52,23 +52,25 @@ class ExecutionStep {
 }
 
 class TriageResult {
-  final String summary;
-  final String riskLevel;
-  final String recommendedNextStep;
+  final String? summary;
+  final String? riskLevel;
+  final String? recommendedNextStep;
+  final String? rawResponse; // For non-structured responses
   final String route;
   final String modelUsed;
   final String intent;
   final String urgency;
-  final int complexity;
+  final double complexity;
   final bool containsPii;
   final List<String> detectedEntities;
   final List<ExecutionStep> executionPath;
   final double latencyMs;
 
   TriageResult({
-    required this.summary,
-    required this.riskLevel,
-    required this.recommendedNextStep,
+    this.summary,
+    this.riskLevel,
+    this.recommendedNextStep,
+    this.rawResponse,
     required this.route,
     required this.modelUsed,
     required this.intent,
@@ -90,19 +92,33 @@ class TriageResult {
       json = {};
     }
 
-    // Check if the input is actually the status response wrapper
     if (json.containsKey('output') && json['output'] is Map) {
       json = Map<String, dynamic>.from(json['output']);
     }
 
-    Map<String, dynamic> nestedResult = {};
+    String? summary;
+    String? riskLevel;
+    String? recommendedNextStep;
+    String? rawResponse;
+
     final rawResult = json['result'];
     if (rawResult is Map) {
-      nestedResult = Map<String, dynamic>.from(rawResult);
+      summary = rawResult['summary']?.toString();
+      riskLevel = rawResult['risk_level']?.toString();
+      recommendedNextStep = rawResult['recommended_next_step']?.toString();
     } else if (rawResult is String) {
       try {
-        nestedResult = Map<String, dynamic>.from(jsonDecode(rawResult));
-      } catch (_) {}
+        final decoded = jsonDecode(rawResult);
+        if (decoded is Map) {
+          summary = decoded['summary']?.toString();
+          riskLevel = decoded['risk_level']?.toString();
+          recommendedNextStep = decoded['recommended_next_step']?.toString();
+        } else {
+          rawResponse = rawResult;
+        }
+      } catch (_) {
+        rawResponse = rawResult;
+      }
     }
     
     final List<ExecutionStep> steps = [];
@@ -148,14 +164,15 @@ class TriageResult {
     }
 
     return TriageResult(
-      summary: nestedResult['summary']?.toString() ?? '',
-      riskLevel: nestedResult['risk_level']?.toString() ?? 'Unknown',
-      recommendedNextStep: nestedResult['recommended_next_step']?.toString() ?? '',
+      summary: summary,
+      riskLevel: riskLevel,
+      recommendedNextStep: recommendedNextStep,
+      rawResponse: rawResponse,
       route: json['route']?.toString() ?? '',
       modelUsed: json['model_used']?.toString() ?? '',
       intent: json['intent']?.toString() ?? '',
       urgency: json['urgency']?.toString() ?? '',
-      complexity: (json['complexity'] as num?)?.toInt() ?? 0,
+      complexity: (json['complexity'] as num?)?.toDouble() ?? 0.0,
       containsPii: json['contains_pii'] == true,
       detectedEntities: (json['detected_entities'] as List<dynamic>?)?.map((e) => e.toString()).toList() ?? [],
       executionPath: steps,

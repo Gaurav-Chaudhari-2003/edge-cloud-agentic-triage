@@ -1,6 +1,5 @@
 import json
 import os
-import re
 from app.services.llm_service import generate
 from app.agents.base import AgentState
 
@@ -19,38 +18,19 @@ class LocalKnowledgeAgent:
     def run(self, state: AgentState) -> AgentState:
         state.current_agent = "local_knowledge"
         
-        content_to_analyze = (state.sanitized_content or state.content).lower()
-        
-        found_in_kb = False
-        for key, entry in self.knowledge_base.items():
-            for keyword in entry["keywords"]:
-                if re.search(r'\b' + re.escape(keyword.lower()) + r'\b', content_to_analyze):
-                    state.output = entry["answer"]
-                    state.model_used = "KnowledgeBase"
-                    found_in_kb = True
-                    break
-            if found_in_kb:
-                break
-
-        if not found_in_kb:
-            # This new prompt is much more explicit and less likely to be ignored.
+        # The IntentClassificationAgent has already done the hard work.
+        # We can directly use the classified intent to look up the answer.
+        if state.intent in self.knowledge_base:
+            state.output = self.knowledge_base[state.intent]["answer"]
+            state.model_used = "KnowledgeBase"
+        else:
+            # Fallback to TinyLlama ONLY if the intent is 'other' or not in our KB
             prompt = f"""
-You are a hospital administrative assistant AI. Your ONLY function is to answer simple administrative questions.
-
-User query: "{content_to_analyze}"
-
-**CRITICAL RULES:**
-1.  Analyze the user's query to determine if it is about one of these topics: hospital timings, appointments, departments, billing, or insurance.
-2.  If the query is about one of those topics, provide a brief, helpful answer.
-3.  If the query is about ANY other topic (especially medical symptoms, conditions, or advice), you MUST respond with ONLY the following exact sentence: "This request requires medical triage."
-4.  Do not apologize or add any extra words.
-
-Your response:
+You are a hospital assistant. The user asked: "{state.sanitized_content or state.content}"
+This is not a medical question. Provide a brief, helpful administrative response.
+If you cannot help, say: "Please contact our help desk for assistance."
 """
-            llm_output = generate(
-                "tinyllama",
-                prompt
-            )
+            llm_output = generate("tinyllama", prompt)
             state.output = llm_output
             state.model_used = "TinyLlama"
 
